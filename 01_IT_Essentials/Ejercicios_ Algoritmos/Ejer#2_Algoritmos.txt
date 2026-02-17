@@ -1,0 +1,100 @@
+Cree un algoritmo como preparar una fiesta sorpresa para un amigo o familiar. Considere si la persona está en casa o no, si los invitados ya llegaron o no, qué hacer mientras esperan, y cómo finaliza la fiesta
+
+1.Inicio
+2.Definir Lugar, Fecha y Hora para la fiesta
+	2.1 Confirmar que el festejado esta disponible el dia y hora de la fiesta
+	2.2 Mientras Festejado no pueda, buscar otra fecha
+	2.3 Definir el lugar de la fiesta
+		2.3.1 Casa de festejado
+		2.3.2 Sino buscar otro lugar
+		2.3.3 Mientras no definir el lugar, seguir buscando opciones
+	2.4 Define que comida y bebidas se utilizaran en la fiesta
+	2.5 Define cual es la logistica y actividades a realizar durante la fiesta
+	2.6 Define logistica de limpieza al finalizar la fiesta
+3.Definir si fiesta es sorpresa o no
+	3.1 Si fiesta es sorpresa, no avisar al festejado.
+		3.1.1 Planificar llegada sorpresa del festejado 
+	3.2 Sino confirmar día, hora y lugar con el festejado
+4.Invitar a participantes
+	4.1 Invitar a los participantes de la fiesta.
+	4.2 Indicar el tipo de fiesta a los invitados
+		4.2.1 Si fiesta es sorpresa, indicar a invitados estar antes de la hora indicada el día y la fecha definida.
+		4.2.2 Sino indicar a invitados la fecha, día y hora.
+	4.3 Indicar si los invitados deben llevar algo a la fiesta o las instrucciones adicionales
+	4.4 Sino no indicar instrucciones adicionales
+	4.5 Confirmar asistencia de invitacion.
+5.Desarrollo de la fiesta
+	5.1 Si la fiesta es sorpresa, los invitados deben estar antes de la hora definida
+		5.1.1 Mientras esperan, pueden comer o hablar entre ellos.
+		5.1.2 Al acercarse la hora definida deben hacer pausa y hacer silencio para esperar al festejado
+		5.1.3 A la llegada del festejado, sorprenderlo 
+		5.1.4 Pasar un tiempo divertido con el festejado durante la fiesta.
+	5.2 Sino la fiesta no es sorpresa.	
+		5.2.1 Los invitados y festejados llegan a la fiesta al lugar, día y hora definida
+		5.2.2 Pasar un tiempo divertido con el festejado durante la fiesta.
+6.Fin de la fiesta
+	6.1 Se finaliza la fiesta.
+	6.2 participantes de la fiesta se retiran
+7.Recoger basura generada por la fiesta
+	7.1 Organizador previamente definio la logistica de limpieza del lugar.
+	7.2 Procede con limpieza del lugar.
+	7.3 Finaliza actividad 
+8.Fin
+
+
+
+Cree un algoritmo que represente cómo prepararse para un examen importante. Debe incluir una lista de actividades (leer, repasar, practicar), condiciones como si ya entendió la materia, o si tiene dudas, y un ciclo que se repita hasta sentirse listo
+
+1.Inicio
+2.Identificar temas de Estudio
+	2.1 Segun el examen, identificar los temas de estudio
+	2.2 Conseguir el material de estudio
+	2.3 mientras no conseguir material, continuar busqueda	
+3.Preparase para el examen
+	3.1 Para cada tema de examen, iniciar proceso e estudio.	
+		3.1.1 Para cada tema, leer material de estudio.
+			3.1.1.1 Mientras no finalizar lectura de material, continuar leyendo
+			3.1.1.2 Finalizar lectura del material de estudio
+		3.1.2 Para cada tema, repasar el material del tema de estudio
+			3.1.2.1 Leer nuevamente el material de estudio 
+			3.1.2.2 Mientras existan dudas, resolver dudas
+			3.1.2.3 Mientras no finalizar lectura o dudas, continuar con el repaso
+			3.1.2.4 Finalizar repaso de Material
+		3.1.3 Para cada tema, practicar el material de estudio
+			3.1.3.1 Mientras no finalizar practicas del material, continuar practicando
+			3.1.3.2 Finalizar practica de la materia
+	3.2 Mientras no estar seguro de enteder la materia, repetir paso 3.1
+	3.3 Si no, pasar a realizar el examen.
+4.Completar el examen el Examen
+5.Fin
+
+
+
+
+Cree un algoritmo de como se prepara para ir a su viaje de diversión favorito
+
+
+1.Inicio
+2.Definir lugar, fecha y Hora del viaje
+	2.1 Mientras no identificar el lugar al que desea viajar, continuar buscando
+	2.2 Mientras no definir fecha y hora de inicio y fin de viaje, continuar definiendo
+3.Definir la forma en que se estara realizando el viaje
+	3.1 Mientras no definir de transporte Avion o Carro o Autobus, continuar definiendo
+4.Planificar actividades del viaje
+	4.1 Identificar las actividades a realizar durante el viaje
+	4.2 Si el tiempo es disponible durante el viaje, Para cada actividad definir horario
+	4.3 Sino, no incluir mas actividades
+5.Identificar los articulos necesarios para el viaje
+	5.1 Mientras no identificar los articulos necesarios, seguir identificando
+6.Empacar articulos necesarios para el viaje
+	6.1 Buscar maleta o bulto en el cual empacar articulos necesarios.
+	6.2 Si no buscar una maleta o bulto prestado o comprar uno nuevo.
+		6.2.1 Mientras no encontrar o comprar maleta o bulto, seguir buscando.
+	6.3 Para cada articulo necesario, empacar en maleta o bulto.
+7.Finalizar preparacion para el viaje
+	7.1 Realizar revision de procesos anteriores
+	7.2 Si estan completos, finalizar planeacion e viaje
+	7.3 Sino, repetir pasos 2,3,4,5,6 y7 hasta que esten completos.
+8.Fin
+
+
