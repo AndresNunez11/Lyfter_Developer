@@ -1,2 +1,0 @@
-Este es un archivo de prueba
-Se realiza un cambio en el archivo ya que existia un error en el nombre y se agrega comentario
