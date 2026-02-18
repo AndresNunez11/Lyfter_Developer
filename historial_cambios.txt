@@ -1,6 +1,20 @@
+
+
+
+PS E:\Programacion\Lyfter-fullstack\Repositorio_Proyectos\Lyfter_GitHub> git log
+commit 4a3b80a25e4d3921c6bb41c7d57da0313008b946 (HEAD -> past_exercises, origin/past_exercises)
+Author: AndresNunez11 <91515514+AndresNunez11@users.noreply.github.com>
+Date:   Tue Feb 17 21:24:15 2026 -0600
+
+    Se agrega al repositorio archivo txt con explicacion de cambios en el mismo. opcion de git log
+
+
+
+
+/***********************************************************************/
+
+
 E:\Programacion\Lyfter-fullstack\Repositorio_Proyectos\Lyfter_GitHub>git log
-
-
 
 /*Se crea nueva rama past_exercise, y se agregan todos los archivos y carpetas para que sean subidos al repositorio remoto.*/
 
