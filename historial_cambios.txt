@@ -1,0 +1,23 @@
+E:\Programacion\Lyfter-fullstack\Repositorio_Proyectos\Lyfter_GitHub>git log
+
+
+
+/*Se crea nueva rama past_exercise, y se agregan todos los archivos y carpetas para que sean subidos al repositorio remoto.*/
+
+commit 20f7b18fa6cf3144ef62c138bc2f7401f2e232c6 (HEAD -> past_exercises, origin/past_exercises)
+Author: AndresNunez11 <91515514+AndresNunez11@users.noreply.github.com>
+Date:   Mon Feb 16 21:58:27 2026 -0600
+
+    added past exercises
+
+
+
+/*Rama principal --main--*/
+/*Se agrega carpeta a repositorio de GIT, se crear archivo Readme.txt, es el primer commit del repositorio*/
+
+commit 1ca9152e7ff9e7031cef840e62490d5c57352301 (origin/main, main)
+Author: AndresNunez11 <91515514+AndresNunez11@users.noreply.github.com>
+Date:   Mon Feb 9 22:39:41 2026 -0600
+
+    first commit
+:
