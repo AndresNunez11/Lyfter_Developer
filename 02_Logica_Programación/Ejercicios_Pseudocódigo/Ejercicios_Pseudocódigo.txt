@@ -1,0 +1,154 @@
+Cree un pseudocódigo que le pida un precio de producto al usuario, calcule su descuento y muestre el precio final tomando en cuenta que:
+Si el precio es menor a 100, el descuento es del 2%.
+Si el precio es mayor o igual a 100, el descuento es del 10%.
+Ejemplos:
+120 → 108
+40 → 39.2
+
+1.Inicio
+2.Definir Precio_Inicial = 0
+3.Definir Precio_Final =  0
+4.Definir Descuento = 0
+5.Mostrar -> "Por favor ingrese el Precio incial" 
+6.Pedir Precio_Inicial
+	-6.1 Si (Precio_Inicial < 100)
+		-6.1.1 Descuento = Precio_Inicial * 0.02
+	-6.2 Si no
+		6.2.1 Descuento >= Precio_Inicial * 0.10
+7.Fin Si
+8. Precio_Final = Precio_Inicial - Descuento
+9.Mostrar Precio_Final
+10.Fin
+
+
+/***********************************Validar Algoritmo*******************************/
+ejemplo 1 -- 120 - 108
+
+1.Inicio
+2.Definir Precio_Inicial = 0
+3.Definir Precio_Final =  0
+4.Definir Descuento = 0
+5.Mostrar -> "Por favor ingrese el Precio incial"  -> 120 
+6.Pedir Precio_Inicial = 120
+	-6.1 Si (Precio_Inicial < 100) -> NO
+		-6.1.1 Descuento = Precio_Inicial * 0.02
+	-6.2 Si no -> Si
+		6.2.1 Descuento >= Precio_Inicial * 0.10 (120 * 0.10 = 12) 
+7.Fin Si
+8. Precio_Final = Precio_Inicial - Descuento ( 120 - 12 = 108)
+9.Mostrar Precio_Final (108)
+10.Fin
+
+ejemplo 2 -- 40 - 39.2
+
+1.Inicio
+2.Definir Precio_Inicial = 0
+3.Definir Precio_Final =  0
+4.Definir Descuento = 0
+5.Mostrar -> "Por favor ingrese el Precio incial"  -> 40 
+6.Pedir Precio_Inicial = 40
+	-6.1 Si (Precio_Inicial < 100) -> Si
+		-6.1.1 Descuento = Precio_Inicial * 0.02 (40-0.02 = 0.8 )
+	-6.2 Si no -> No
+		6.2.1 Descuento >= Precio_Inicial * 0.10 
+7.Fin Si
+8. Precio_Final = Precio_Inicial - Descuento ( 40 - 0.8 = 39.2)
+9.Mostrar Precio_Final (39.2)
+10.Fin
+
+/**********************************************************************************/
+
+
+Cree un pseudocódigo que le pida un tiempo en segundos al usuario y calcule si es menor o mayor a 10 minutos. Si es menor, muestre cuantos segundos faltarían para llegar a 10 minutos. Si es mayor, muestre “Mayor”. Si es exactamente igual, muestre “Igual”.
+Ejemplos:
+1040 → Mayor
+140 → 460
+600 → Igual
+599 → 1
+
+
+1-Inicio
+2-Definir Segundos_Ingresados = 0
+3-Definir Segundos_Faltantes = 0
+4-Mostrar "Por favor ingrese la cantidad de segundos"
+5-Pedir Segundos_Ingresados
+	5.1- SI(Segundos_Ingresados > 600)
+		5.1.1 Mostrar "MAYOR"
+	5.2- SI NO
+		5.2.1- SI(Segundos_Ingresados == 600)
+			5.2.1.1- Mostrar "IGUAL"
+	5.3-SI NO
+		5.3.1 Segundos_Faltantes = 600 - Segundos_Ingresados
+		5.3.2 Mostrar "Los segundos falantes para 10 minutos son " + Segundos_Faltantes
+6.Fin si
+7.Fin
+
+/***********************************Validar Algoritmo*******************************/
+
+Ejemplos:
+1040 → Mayor
+1-Inicio
+2-Definir Segundos_Ingresados = 0
+3-Definir Segundos_Faltantes = 0
+4-Mostrar "Por favor ingrese la cantidad de segundos" ---1040
+5-Pedir Segundos_Ingresados 1040
+	5.1- SI(Segundos_Ingresados > 600) -->SI
+		5.1.1 Mostrar "MAYOR" --muestra palabra mayor
+	5.2- SI NO --NO
+		5.2.1- SI(Segundos_Ingresados == 600)
+			5.2.1.1- Mostrar "IGUAL"
+	5.3-SI NO -- NO
+		5.3.1 Segundos_Faltantes = 600 - Segundos_Ingresados
+		5.3.2 Mostrar "Los segundos falantes para 10 minutos son " + Segundos_Faltantes
+6.Fin si
+7.Fin
+
+
+140 → 460
+
+1-Inicio
+2-Definir Segundos_Ingresados = 0
+3-Definir Segundos_Faltantes = 0
+4-Mostrar "Por favor ingrese la cantidad de segundos" ---1040
+5-Pedir Segundos_Ingresados 1040
+	5.1- SI(Segundos_Ingresados > 600) -->SI
+		5.1.1 Mostrar "MAYOR" --muestra palabra mayor
+	5.2- SI NO --NO
+		5.2.1- SI(Segundos_Ingresados == 600)
+			5.2.1.1- Mostrar "IGUAL"
+	5.3-SI NO -- NO
+		5.3.1 Segundos_Faltantes = 600 - Segundos_Ingresados
+		5.3.2 Mostrar "Los segundos falantes para 10 minutos son " + Segundos_Faltantes
+6.Fin si
+7.Fin
+
+600 → Igual
+599 → 1
+
+
+/**********************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

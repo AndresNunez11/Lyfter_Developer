@@ -1,0 +1,87 @@
+/***Algoritmo video YouTube***/
+
+1.Inicio
+2.Elegir dispositivo para ver video Youtube.
+3.Si no, buscar un dispositivo prestado
+4.Abrir aplicacion de YouTube o abrir Youtube en buscador web
+5.Buscar y elegir el video que deseamos ver
+6.Reproducir el video.
+7.Fin
+
+/***Algoritmo de Rutina Diaria***/
+1.Inicio
+2.Levantarse de la cama al sonar la alarma
+	2.1.Si levantarme y detener el sonido de la alarma
+	2.2 Si no, Mientras no me levante, la alarma continua sonando cada 10 minutos
+3.Tomar una ducha
+	3.1 entrar a la ducha
+	3.2 Si estoy limpio, finalizar ducha
+	3.3 Si no continuar ducha hasta estar limpio
+	3.4 Salir de la ducha y cecarme
+	3.5 Si estoy ceco, vestirme
+	3.6 Si no, continuar cecandome
+	3.7 Salir de la ducha
+	3.8 Vestirme
+4.Desayunar
+	4.1 Servir desayuno
+	4.2 Si no estoy satisfecho o tenga tiempo, continuar desayunado
+	4.3 Sino terminar con desayuno 
+	4.4 Recoger la mesa.
+	4.5 Cepillarme los dientes	
+5.Viajar hacia el trabajo
+	5.1 Salir de mi casa 
+	5.2 Esperar el autobus para llegar al trabajo
+	5.3 Subir al autobus
+	5.4 Mientras no llego a el lugar, mantenerme en el autobus
+	5.5 Bajar del autobus en la parada correcta
+	5.6 Caminar hasta la entrada de la oficina
+	5.7 Ingresar a la oficina y caminar a mi puesto de trabajo.
+6.Iniciar labores
+	6.1 Identificar las tareas pendientes del trabajo
+	6.2 Para cada tarea pendiente se debe completar
+	6.3 Pausar trabajo para tomar pausa de almuerzo
+7.Tomar descanso para almorzar
+	7.1 Caminar hacia el comedor
+	7.2 Mientras el almuerzo este frio, se debe calentar
+	7.3 Servir almuerzo
+	7.4 Si no estoy satisfecho o tenga tiempo, continuar almorzando
+	7.5 Sino terminar con almuerzo
+	7.6 Recoger y laver los trastes usados
+	7.7 Cepillarme los dientes
+8.Continuar con el trabajo
+	8.1 Continuar con las tareas pendientes del trabajo
+	8.2 Para cada tarea pendiente se debe completar
+	8.3 Poner en pausa las tareas pendientes de terminar 
+	8.4 Caminar a la salida de la oficina.
+	8.5 Salir del trabajo
+9.Regresar a la casa 
+	9.1 Caminar al lugar donde espero el bus para mi casa
+	9.2 Subir l bus de regreso a mi casa 
+	9.3 mientras en bus no llegue a mi destino, mantenerme n bus.
+	9.4 Bajar del autobus en el destino.
+	9.5 Caminar hasta mi casa
+	9.6 Ingresar a mi casa.
+10.Cambiarse de ropa
+	10.1 Quitarme la ropa del trabajo
+	10.2 Ponerme ropa para estar comodo en mi hogar 
+11.Tomar la cena
+	11.1 Servir la Cena
+	11.2 Si no estoy satisfecho, continuar cenando
+	11.3 Sino terminar con cena
+	11.4 Recoger y laver los trastes usados
+	11.5 Cepillarme los dientes
+12.Prepararse para descansar
+	12.1 Para cada luz encendida en la casa, apagarla
+	12.2 ingresar al dormitorio
+	12.3 apagar la luz del dormitorio
+	12.4 Acostarse en la cama	
+13.Dormir
+	13.1 mientras es tiempo de dormir y no suena la alarma, dormir
+14.Fin
+
+
+
+
+
+
+

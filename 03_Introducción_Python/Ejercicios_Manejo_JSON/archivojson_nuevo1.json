@@ -1,0 +1,19 @@
+[
+    {
+        "name": {
+            "english": "Pikachu"
+        },
+        "level": 12,
+        "type": [
+            "electric"
+        ],
+        "base": {
+            "HP": 12,
+            "Attack": 25,
+            "Defense": 35,
+            "Sp. Attack": 65,
+            "Sp. Defense": 45,
+            "Speed": 58
+        }
+    }
+]
