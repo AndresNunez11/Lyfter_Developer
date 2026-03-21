@@ -152,5 +152,5 @@ def main():
     except Exception  as e:
         print(f'Existe un error en la ejecucion principal {e} ')
 
-
-main()
+if __name__ == "__main__":
+    main()
