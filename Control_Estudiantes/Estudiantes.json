@@ -118,13 +118,5 @@
         "english_grade": 69,
         "social_grade": 73,
         "science_grade": 67
-    },
-    {
-        "name": "Andres Nunez Solano",
-        "section": "11-B",
-        "spanish_grade": 85,
-        "english_grade": 95,
-        "social_grade": 65,
-        "science_grade": 99
     }
 ]

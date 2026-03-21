@@ -4,7 +4,8 @@ import actions
 menu_list= ["0- Salir",
 "1- Ingresar Estudiante", "2- Informacion de Estudiantes", 
 "3- Top 3 Estudiantes Mejor Promedio", "4- Promedio total", 
-"5- Exportar datos a CSV", "6- Importar datos desde CSV"]
+"5- Exportar datos a CSV", "6- Importar datos desde CSV", 
+"7-Eliminar un estudiante de la lista", "8-Lista de Estudiantes Reprobados"]
 
 # Funcion principal para desplegar el menu
 def menu(path_json_file):
@@ -41,6 +42,12 @@ def menu(path_json_file):
                     case 6:
                         print('Validar archivo e importar de formato CSV. Los datos del archivo son: \n')
                         actions.ftn_csv_import()
+                    case 7: 
+                        print('Proceso para eliminar un estudiante de la lista: \n')
+                        actions.ftn_delete_student(path_json_file)
+                    case 8:
+                        print("Se muestra la informacion de los estudiantes reprobados")
+                        actions.ftn_failed_students(path_json_file)
             except IndexError as error:
                 print(f'La opción elegida no esta dentro de las disponibles. Error: {error}')
             except ValueError as e:

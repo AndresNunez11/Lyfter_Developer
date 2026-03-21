@@ -2,6 +2,26 @@ import data
 #variables globales
 student_list= []
 
+#Clase para que el nombre no incluya un numero
+class nameTypeError(Exception):
+    def __init__(self,name):
+        super().__init__(f'\n El nombre no puede ser o incluir un número')
+
+#Clase para que el nombre no puede estar vacio
+class emptyTypeError(Exception):
+    def __init__(self,name):
+        super().__init__(f'\n El nombre no puede esta vacio')
+
+#Clase para validar que el nombre este compuesto por tres palabras
+class completeTypeError(Exception):
+    def __init__(self,name):
+        super().__init__(f'\n Debe ingresar al menos nombre y dos apellido')
+
+#Clase para que el formato de la seccion
+class formatTypeError(Exception):
+    def __init__(self,name):
+        super().__init__(f'\n El formato de la seccion es incorrecto, debe ser numero-numero-letra')
+
 # Exception Negative Number
 def no_negative_number(enter_number):
     if enter_number < 0:
@@ -27,6 +47,36 @@ def no_duplicate_student(enter_text, std_list):
             raise ValueError("El estudiante ya fue agregado a la lista de estudiantes")
     return enter_text
 
+#Excepcion para validar el nombre no sea un numero
+def validate_name(enter_text):
+    for char in enter_text:
+        if(char.isdigit()):
+            raise nameTypeError(enter_text)
+    return enter_text
+
+#Excepcion para validar el nombre no este vacio
+def validate_empty_name(enter_text):
+    if enter_text.strip() == "":
+        raise emptyTypeError(enter_text)
+    return enter_text
+
+#Excepcion para validar que se agregue nombre completo 
+def validate_complete_name(enter_text):
+    complete_name = enter_text.strip().split()
+    if len(complete_name)<3:
+        raise completeTypeError(enter_text)
+    return enter_text
+
+#Excepcio para validar el formato de la seccion
+def validate_section_format(enter_text):
+    if(len(enter_text)!=3):
+        raise formatTypeError(enter_text)
+    if not enter_text[:2].isdigit():
+        raise formatTypeError(enter_text)
+    if not enter_text[2].isalpha():
+        raise formatTypeError(enter_text)       
+
+
 # Funcion para leer los datos desde Jason, utilizando modulo de data
 def read_json_file(path_json_file):
     student_list = data.read_json_file(path_json_file)
@@ -38,8 +88,15 @@ def new_student(path_json_file):
         try: 
             new_student_list = read_json_file(path_json_file) or []       
             #new_student_list = student_list or []
-            student_name = no_duplicate_student(input('Ingrese el nombre completo del estudiante: \n'),new_student_list)
-            student_section= input('Ingresa el numero de seccion del estudiante: \n')
+            name = no_duplicate_student(validate_complete_name(validate_empty_name(validate_name(input('Ingrese el nombre completo del estudiante: \n')))),new_student_list)
+            # name = validate_name(name)
+            # name = validate_empty_name(name)
+            # name = validate_complete_name(name)
+            # name = no_duplicate_student(name,new_student_list)
+            student_name = name
+            section = input('Ingresa el numero de seccion del estudiante: \n')
+            validate_section_format(section)
+            student_section= section
             spanish_grade = grade_number(int(input('Ingresa la nota para la asignacion - Español: \n')))
             english_grade = grade_number(int(input('Ingresa la nota para la asignacion - Ingles: \n')))
             social_grade = grade_number(int(input('Ingresa la nota para la asignacion - Estudios Sociales: \n')))
@@ -55,12 +112,32 @@ def new_student(path_json_file):
             new_student_list.append(new_student)
             data.save_new_student(new_student_list,path_json_file)
             desicion = input(f'Estudiante agregadoa la base de estudianetes. para agregar otro estudiante digite Y o para salir digite N -> ').upper()
-            if desicion == 'N':
+            if desicion != 'Y':
+                break
+        except nameTypeError as error:
+            print(f'Error: {error}\nDato ingresado no es correcto. Intente nuevamente.')
+            desicion = input(f'Para continuar con el ingreso de estudiantes digite Y o para salir digite N -> ').upper()
+            if desicion != 'Y':
+                break
+        except emptyTypeError as error:
+            print(f'Error: {error}\nDato ingresado no es correcto. Intente nuevamente.')
+            desicion = input(f'Para continuar con el ingreso de estudiantes digite Y o para salir digite N -> ').upper()
+            if desicion != 'Y':
+                break
+        except completeTypeError as error:
+            print(f'Error: {error}\nDato ingresado no es correcto. Intente nuevamente.')
+            desicion = input(f'Para continuar con el ingreso de estudiantes digite Y o para salir digite N -> ').upper()
+            if desicion != 'Y':
+                break
+        except formatTypeError as error:
+            print(f'Error: {error}\nDato ingresado no es correcto. Intente nuevamente.')
+            desicion = input(f'Para continuar con el ingreso de estudiantes digite Y o para salir digite N -> ').upper()
+            if desicion != 'Y':
                 break
         except  ValueError as error:
             print(f'Error: {error}\nDato ingresado no es correcto. Intente nuevamente.')
             desicion = input(f'Para continuar con el ingreso de estudiantes digite Y o para salir digite N -> ').upper()
-            if desicion == 'N':
+            if desicion != 'Y':
                 break
         except Exception as e:
             print(f'Existe un error al ingresar el nuevo estudiante. Error: {e}')
@@ -152,3 +229,51 @@ def ftn_csv_import():
         data.csv_import(path_file_csv)        
     except Exception as e:
         print(f'Error en funcion para exportar datos a CSV. Error: {e}')
+
+#Funcion para eliminar un estudiante de la lista
+def ftn_delete_student(path_json_file):
+    try:
+        std_list = read_json_file(path_json_file) or []
+        student_name= input('Digete el nombre del estudiante: \n')
+        student_section = input('Digite la seccion del estudiante: \n')
+        exist = 'Y'
+        for index, student in enumerate(std_list):
+            if(student["name"]==student_name and student["section"] == student_section):
+                desicion= input('Digite Y para eliminar, o N para salir: \n').upper()
+                if(desicion == 'Y'):
+                    delete_student = std_list.pop(index)
+                    print(f'El estudiante {delete_student} se elimino de la lista')
+                else:
+                    print('No se elimina ningun registro')
+                exist = 'Y'
+                break
+            else:
+                exist = 'N'
+        #print(exist)
+        if(exist== "N"):
+            print(f'El estudiante {student_name} seccion {student_section}, no existe en los registros. Favor validar.')
+        else:
+            print('Se actualiza informacion en BD')
+            data.save_new_student(std_list,path_json_file)
+        #print(f'{std_list}')
+    except Exception as e:
+        print(f'Error al tratar de eliminar estudiante de la lista. Error: {e} ')
+
+# funcion para listar los estudiantes reprobados
+def ftn_failed_students(path_json_file):
+    try:
+        std_list = read_json_file(path_json_file) or []
+        failed_student_list = []
+        quantiy = 0
+        for student in std_list:
+            #print(student)
+            if student['spanish_grade'] < 70 or student['english_grade']<70 or student['social_grade']<70 or student['science_grade']<70:
+                quantiy+= 1
+                failed_student_list.append(student)
+        print(f'La cantidad de estudiantes reprobados es {quantiy}\n')
+        print(f'Detale: \n {failed_student_list}')
+    except Exception as e:
+        print(f'Error al mostrar a los estudiantes reprobados. Error: {e}')
+            
+
+    

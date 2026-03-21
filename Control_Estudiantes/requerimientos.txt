@@ -16,12 +16,12 @@
 
 Requerimientos extra (opcionales)
 1- Agregue una opción nueva al menú que permita eliminar a un estudiante usando su nombre y sección. Esta Debe validar:
-    Si el estudiante existe o no
-    Confirmar con el usuario antes de eliminar
-2- Mostrar estudiantes reprobado, enlistando todos los estudiantes que tengan al menos una materia con nota menor a 60.
-    Añada una opción al menú: Ver estudiantes reprobados
-    Muestre el nombre, sección y las materias reprobadas con sus notas
+    Si el estudiante existe o no✅
+    Confirmar con el usuario antes de eliminar✅
+2- Mostrar estudiantes reprobado, enlistando todos los estudiantes que tengan al menos una materia con nota menor a 60.✅
+    Añada una opción al menú: Ver estudiantes reprobados✅
+    Muestre el nombre, sección y las materias reprobadas con sus notas✅
 3- Mejore el sistema agregando el siguiente manejo de errores:
-Que el nombre completo no esté vacío ni tenga números
-Que la sección siga el formato válido (ejemplo: "10A", "11B", etc.)
-Que no se permita ingresar dos estudiantes con el mismo nombre y sección (no duplicados)
+Que el nombre completo no esté vacío ni tenga números✅
+Que la sección siga el formato válido (ejemplo: "10A", "11B", etc.)✅
+Que no se permita ingresar dos estudiantes con el mismo nombre y sección (no duplicados) ✅ No es claro si un estudiante pyuede tener dos secciones? Logicamente no es correcto? 
