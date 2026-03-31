@@ -1,53 +1,54 @@
 import actions
 
 #Opciones del menu, esta en el codigo pero podria trarse de un json o BD
-menu_list= ["0- Salir",
+#Utilizar la variable global en la mayuscula cuando es inmutable -- 
+MENU_LIST= ["0- Salir",
 "1- Ingresar Estudiante", "2- Informacion de Estudiantes", 
 "3- Top 3 Estudiantes Mejor Promedio", "4- Promedio total", 
 "5- Exportar datos a CSV", "6- Importar datos desde CSV", 
 "7-Eliminar un estudiante de la lista", "8-Lista de Estudiantes Reprobados"]
 
 # Funcion principal para desplegar el menu
-def menu(path_json_file):
+def menu(path_csv_file):
     try: 
         #new_std_list = actions.read_json_file(path)
         while True:
             try:
                 print(f"******Menu Principal******")
                 print(f'Opciones:\n')
-                for item in menu_list:
+                for item in MENU_LIST:
                     print(f'{item}')
                 option = int(input(f'Digite el número de la opción a elegir: \n'))
-                print(f'La opción elegida es {menu_list[option]}')
+                print(f'La opción elegida es {MENU_LIST[option]}')
                 match option:
                     case 0:
                         print(f'Fin de la aplicación')
                         break
                     case 1:
                         print(f'Ingresar datos del estudiante:\n')
-                        actions.new_student(path_json_file)
+                        actions.new_student(path_csv_file)
                         #actions.new_student(new_std_list, path)
                     case 2:
                         print('Se muestra la informacion de todos los estudiantes: \n')
-                        actions.show_all_students(path_json_file)
+                        actions.show_all_students(path_csv_file)
                     case 3:
                         print('Top 3 de estudiantes con promedio de notas mas alto: \n')
-                        actions.top_3_average(path_json_file)
+                        actions.top_3_average(path_csv_file)
                     case 4: 
                         print('El promedio total de todos los estudiantes es :\n')
-                        actions.total_average(path_json_file)
+                        actions.total_average(path_csv_file)
                     case 5:
                         print('Generar archivo y exportar a formato CSV :\n')
-                        actions.ftn_csv_export(path_json_file)
+                        actions.ftn_csv_export(path_csv_file)
                     case 6:
                         print('Validar archivo e importar de formato CSV. Los datos del archivo son: \n')
                         actions.ftn_csv_import()
                     case 7: 
                         print('Proceso para eliminar un estudiante de la lista: \n')
-                        actions.ftn_delete_student(path_json_file)
+                        actions.ftn_delete_student(path_csv_file)
                     case 8:
                         print("Se muestra la informacion de los estudiantes reprobados")
-                        actions.ftn_failed_students(path_json_file)
+                        actions.ftn_failed_students(path_csv_file)
             except IndexError as error:
                 print(f'La opción elegida no esta dentro de las disponibles. Error: {error}')
             except ValueError as e:

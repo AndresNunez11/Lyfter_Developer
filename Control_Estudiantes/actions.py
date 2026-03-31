@@ -1,6 +1,9 @@
 import data
 #variables globales
-student_list= []
+#No utilizar variables globales si van a estar definiendose en diferentes funciones
+#student_list= []
+
+HEATHERS_FILE = ["name","section","spanish_grade","english_grade","social_grade","science_grade"]
 
 #Clase para que el nombre no incluya un numero
 class nameTypeError(Exception):
@@ -77,16 +80,22 @@ def validate_section_format(enter_text):
         raise formatTypeError(enter_text)       
 
 
-# Funcion para leer los datos desde Jason, utilizando modulo de data
-def read_json_file(path_json_file):
-    student_list = data.read_json_file(path_json_file)
+# Funcion para leer los datos desde Json, utilizando modulo de data
+# def read_json_file(path_json_file):
+#     student_list = data.read_json_file(path_json_file)
+#     return student_list
+
+# Funcion para leer los datos desde csv, utilizando modulo de data
+def read_csv_file(path_csv_file):
+    student_list = data.read_csv_file(path_csv_file)
     return student_list
 
+
 # Funcion para agregar a un nuevo estudiante a la base de estudiantes
-def new_student(path_json_file):
+def new_student(path_csv_file):
     while True:
         try: 
-            new_student_list = read_json_file(path_json_file) or []       
+            new_student_list =  []   #read_csv_file(path_csv_file) or    
             #new_student_list = student_list or []
             name = no_duplicate_student(validate_complete_name(validate_empty_name(validate_name(input('Ingrese el nombre completo del estudiante: \n')))),new_student_list)
             # name = validate_name(name)
@@ -110,8 +119,9 @@ def new_student(path_json_file):
                 "science_grade":science_grade
                 }
             new_student_list.append(new_student)
-            data.save_new_student(new_student_list,path_json_file)
-            desicion = input(f'Estudiante agregadoa la base de estudianetes. para agregar otro estudiante digite Y o para salir digite N -> ').upper()
+            print(new_student_list)
+            data.save_new_student(new_student_list,path_csv_file)
+            desicion = input(f'Estudiante agregado a la base de estudianetes. para agregar otro estudiante digite Y o para salir digite N -> ').upper()
             if desicion != 'Y':
                 break
         except nameTypeError as error:
@@ -143,9 +153,9 @@ def new_student(path_json_file):
             print(f'Existe un error al ingresar el nuevo estudiante. Error: {e}')
 
 # Funcion para mostrar la informacion de los estudiantes registrados en la base de estudiantes
-def show_all_students(path_json_file):
+def show_all_students(path_csv_file):
     try:
-        new_std_list = read_json_file(path_json_file)
+        new_std_list = read_csv_file(path_csv_file)
         i=0
         for student in new_std_list:
             i+=1
@@ -172,12 +182,12 @@ codigo para ordenar la lista
                         sort_list.insert(index, new_student) 
                         break
 """  
-def top_3_average(path_json_file):
+def top_3_average(path_csv_file):
     try:
         sort_list = []
-        new_std_list = read_json_file(path_json_file)
+        new_std_list = read_csv_file(path_csv_file)
         for student in new_std_list:
-            grade_average = (student['spanish_grade']+student['english_grade']+student['social_grade']+student['science_grade'])/4
+            grade_average = (int(student['spanish_grade'])+int(student['english_grade'])+int(student['social_grade'])+int(student['science_grade']))/4
             new_student = {
                 'name': student['name'],
                 'section': student['section'],
@@ -185,17 +195,20 @@ def top_3_average(path_json_file):
             sort_list.append(new_student)
         sort_list.sort(key=lambda s: s["average"], reverse=True) # funcion que le indica al diccionario como debe de ordenarse, en este caso por el promedio
         top_3 = sort_list[:3]
-        print(top_3)
+        for student in top_3:
+            print(f'Nombre Estudiante: {student['name']}')
+            print(f'Sección Estudiante: {student['section']}')
+            print(f'Promedio Estudiante: {student['average']}\n')
     except Exception as e:
         print(f'Error al obtener el top 3 en promedio de notas. Error: {e} ')
 
 # Funcion para calcular el promedio total de todos los estudantes (std = student  // stds students)
-def total_average(path_json_file):
+def total_average(path_csv_file):
     try:
-        std_list = read_json_file(path_json_file)
+        std_list = read_csv_file(path_csv_file)
         new_std_list = []
         for student in std_list:
-            grade_average = (student['spanish_grade']+student['english_grade']+student['social_grade']+student['science_grade'])/4
+            grade_average = (int(student['spanish_grade'])+int(student['english_grade'])+int(student['social_grade'])+int(student['science_grade']))/4
             new_student = {
                 'name': student['name'],
                 'section': student['section'],
@@ -211,13 +224,16 @@ def total_average(path_json_file):
         print(f'Error al obtener el  promedio total de notas de todos los estudiantes. Error: {e} ')
 
 # Funcion para exportar los datos a CSV
-def ftn_csv_export(path_json_file):
+def ftn_csv_export(path_csv_file):
     try:
         path_file_csv = 'Control_Estudiantes/Estudiantes.csv' 
         headers=[]
-        std_data = read_json_file(path_json_file)
-        for item  in std_data[0].keys():
-            headers.append(item)
+        std_data = read_csv_file(path_csv_file)
+        if not std_data:
+            headers = HEATHERS_FILE
+        else:
+            for item  in std_data[0].keys():
+                headers.append(item)
         data.csv_export(path_file_csv,std_data, headers)
     except Exception as e:
         print(f'Error en funcion para exportar datos a CSV. Error: {e}')
@@ -231,9 +247,9 @@ def ftn_csv_import():
         print(f'Error en funcion para exportar datos a CSV. Error: {e}')
 
 #Funcion para eliminar un estudiante de la lista
-def ftn_delete_student(path_json_file):
+def ftn_delete_student(path_csv_file):
     try:
-        std_list = read_json_file(path_json_file) or []
+        std_list = read_csv_file(path_csv_file) or []
         student_name= input('Digete el nombre del estudiante: \n')
         student_section = input('Digite la seccion del estudiante: \n')
         exist = 'Y'
@@ -254,20 +270,20 @@ def ftn_delete_student(path_json_file):
             print(f'El estudiante {student_name} seccion {student_section}, no existe en los registros. Favor validar.')
         else:
             print('Se actualiza informacion en BD')
-            data.save_new_student(std_list,path_json_file)
+            data.save_new_student(std_list,path_csv_file)
         #print(f'{std_list}')
     except Exception as e:
         print(f'Error al tratar de eliminar estudiante de la lista. Error: {e} ')
 
 # funcion para listar los estudiantes reprobados
-def ftn_failed_students(path_json_file):
+def ftn_failed_students(path_csv_file):
     try:
-        std_list = read_json_file(path_json_file) or []
+        std_list = read_csv_file(path_csv_file) or []
         failed_student_list = []
         quantiy = 0
         for student in std_list:
             #print(student)
-            if student['spanish_grade'] < 70 or student['english_grade']<70 or student['social_grade']<70 or student['science_grade']<70:
+            if int(student['spanish_grade']) < 70 or int(student['english_grade'])<70 or int(student['social_grade'])<70 or int(student['science_grade'])<70:
                 quantiy+= 1
                 failed_student_list.append(student)
         print(f'La cantidad de estudiantes reprobados es {quantiy}\n')
