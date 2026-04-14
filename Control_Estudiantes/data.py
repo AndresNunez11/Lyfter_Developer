@@ -9,8 +9,8 @@ HEATHERS_FILE = ["name","section","spanish_grade","english_grade","social_grade"
 
 # Leer archivo de CSV con informacion de estudiantes, si no existe crea el archivo
 
-def read_csv_file(path_csv_file):
-    student_list=[]
+def read_csv_file(std_list,path_csv_file):
+    student_list= std_list
     try:
         if not os.path.exists(path_csv_file):
             print("El archivo no existe. Se creará uno nuevo.")

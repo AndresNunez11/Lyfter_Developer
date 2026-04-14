@@ -86,16 +86,17 @@ def validate_section_format(enter_text):
 #     return student_list
 
 # Funcion para leer los datos desde csv, utilizando modulo de data
-def read_csv_file(path_csv_file):
-    student_list = data.read_csv_file(path_csv_file)
+def read_csv_file(std_list,path_csv_file):
+    student_list = data.read_csv_file(std_list,path_csv_file)
     return student_list
 
 
 # Funcion para agregar a un nuevo estudiante a la base de estudiantes
-def new_student(path_csv_file):
+def new_student():
+    new_student_list =  [] 
     while True:
         try: 
-            new_student_list =  []   #read_csv_file(path_csv_file) or    
+            #read_csv_file(path_csv_file) or    
             #new_student_list = student_list or []
             name = no_duplicate_student(validate_complete_name(validate_empty_name(validate_name(input('Ingrese el nombre completo del estudiante: \n')))),new_student_list)
             # name = validate_name(name)
@@ -120,8 +121,8 @@ def new_student(path_csv_file):
                 }
             new_student_list.append(new_student)
             print(new_student_list)
-            data.save_new_student(new_student_list,path_csv_file)
-            desicion = input(f'Estudiante agregado a la base de estudianetes. para agregar otro estudiante digite Y o para salir digite N -> ').upper()
+            # data.save_new_student(new_student_list,path_csv_file)
+            desicion = input(f'Estudiante agregado a la lista de estudianetes. para agregar otro estudiante digite Y o para salir digite N -> ').upper()
             if desicion != 'Y':
                 break
         except nameTypeError as error:
@@ -151,11 +152,13 @@ def new_student(path_csv_file):
                 break
         except Exception as e:
             print(f'Existe un error al ingresar el nuevo estudiante. Error: {e}')
+    return new_student_list
 
 # Funcion para mostrar la informacion de los estudiantes registrados en la base de estudiantes
-def show_all_students(path_csv_file):
+def show_all_students(student_list):
     try:
-        new_std_list = read_csv_file(path_csv_file)
+        new_std_list = student_list
+        # new_std_list = read_csv_file(path_csv_file)
         i=0
         for student in new_std_list:
             i+=1
@@ -182,10 +185,11 @@ codigo para ordenar la lista
                         sort_list.insert(index, new_student) 
                         break
 """  
-def top_3_average(path_csv_file):
+def top_3_average(student_list):
     try:
         sort_list = []
-        new_std_list = read_csv_file(path_csv_file)
+        # new_std_list = read_csv_file(path_csv_file)
+        new_std_list = student_list
         for student in new_std_list:
             grade_average = (int(student['spanish_grade'])+int(student['english_grade'])+int(student['social_grade'])+int(student['science_grade']))/4
             new_student = {
@@ -203,9 +207,10 @@ def top_3_average(path_csv_file):
         print(f'Error al obtener el top 3 en promedio de notas. Error: {e} ')
 
 # Funcion para calcular el promedio total de todos los estudantes (std = student  // stds students)
-def total_average(path_csv_file):
+def total_average(student_list):
     try:
-        std_list = read_csv_file(path_csv_file)
+        # std_list = read_csv_file(path_csv_file)
+        std_list = student_list
         new_std_list = []
         for student in std_list:
             grade_average = (int(student['spanish_grade'])+int(student['english_grade'])+int(student['social_grade'])+int(student['science_grade']))/4
@@ -224,32 +229,34 @@ def total_average(path_csv_file):
         print(f'Error al obtener el  promedio total de notas de todos los estudiantes. Error: {e} ')
 
 # Funcion para exportar los datos a CSV
-def ftn_csv_export(path_csv_file):
+def ftn_csv_export(student_list,path_csv_file):
     try:
-        path_file_csv = 'Control_Estudiantes/Estudiantes.csv' 
+        # path_file_csv = 'Control_Estudiantes/Estudiantes.csv' 
         headers=[]
-        std_data = read_csv_file(path_csv_file)
+        std_data = read_csv_file(student_list,path_csv_file) 
+        # std_data = student_list
         if not std_data:
             headers = HEATHERS_FILE
         else:
             for item  in std_data[0].keys():
                 headers.append(item)
-        data.csv_export(path_file_csv,std_data, headers)
+        data.csv_export(path_csv_file,std_data, headers)
     except Exception as e:
         print(f'Error en funcion para exportar datos a CSV. Error: {e}')
 
 # Funcion para importar los datos a CSV
-def ftn_csv_import():
+def ftn_csv_import(path_csv_file):
     try:
-        path_file_csv = 'Control_Estudiantes/Estudiantes.csv' 
-        data.csv_import(path_file_csv)        
+        # path_file_csv = 'Control_Estudiantes/Estudiantes.csv' 
+        data.csv_import(path_csv_file)        
     except Exception as e:
-        print(f'Error en funcion para exportar datos a CSV. Error: {e}')
+        print(f'Error en funcion para importar datos a CSV. Error: {e}')
 
 #Funcion para eliminar un estudiante de la lista
-def ftn_delete_student(path_csv_file):
+def ftn_delete_student(student_list):
     try:
-        std_list = read_csv_file(path_csv_file) or []
+        # std_list = read_csv_file(path_csv_file) or []
+        std_list =  student_list
         student_name= input('Digete el nombre del estudiante: \n')
         student_section = input('Digite la seccion del estudiante: \n')
         exist = 'Y'
@@ -270,15 +277,17 @@ def ftn_delete_student(path_csv_file):
             print(f'El estudiante {student_name} seccion {student_section}, no existe en los registros. Favor validar.')
         else:
             print('Se actualiza informacion en BD')
-            data.save_new_student(std_list,path_csv_file)
+            return std_list
+            # data.save_new_student(std_list,path_csv_file)
         #print(f'{std_list}')
     except Exception as e:
         print(f'Error al tratar de eliminar estudiante de la lista. Error: {e} ')
 
 # funcion para listar los estudiantes reprobados
-def ftn_failed_students(path_csv_file):
+def ftn_failed_students(student_list):
     try:
-        std_list = read_csv_file(path_csv_file) or []
+        # std_list = read_csv_file(path_csv_file) or []
+        std_list = student_list
         failed_student_list = []
         quantiy = 0
         for student in std_list:

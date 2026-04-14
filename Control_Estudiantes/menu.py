@@ -11,6 +11,7 @@ MENU_LIST= ["0- Salir",
 # Funcion principal para desplegar el menu
 def menu(path_csv_file):
     try: 
+        new_std_list = []
         #new_std_list = actions.read_json_file(path)
         while True:
             try:
@@ -26,29 +27,29 @@ def menu(path_csv_file):
                         break
                     case 1:
                         print(f'Ingresar datos del estudiante:\n')
-                        actions.new_student(path_csv_file)
+                        new_std_list = actions.new_student()
                         #actions.new_student(new_std_list, path)
                     case 2:
                         print('Se muestra la informacion de todos los estudiantes: \n')
-                        actions.show_all_students(path_csv_file)
+                        actions.show_all_students(new_std_list) #path_csv_file
                     case 3:
                         print('Top 3 de estudiantes con promedio de notas mas alto: \n')
-                        actions.top_3_average(path_csv_file)
+                        actions.top_3_average(new_std_list) #path_csv_file
                     case 4: 
                         print('El promedio total de todos los estudiantes es :\n')
-                        actions.total_average(path_csv_file)
+                        actions.total_average(new_std_list) #path_csv_file
                     case 5:
                         print('Generar archivo y exportar a formato CSV :\n')
-                        actions.ftn_csv_export(path_csv_file)
+                        actions.ftn_csv_export(new_std_list,path_csv_file)
                     case 6:
                         print('Validar archivo e importar de formato CSV. Los datos del archivo son: \n')
-                        actions.ftn_csv_import()
+                        actions.ftn_csv_import(path_csv_file)
                     case 7: 
                         print('Proceso para eliminar un estudiante de la lista: \n')
-                        actions.ftn_delete_student(path_csv_file)
+                        new_std_list = actions.ftn_delete_student(new_std_list) #path_csv_file
                     case 8:
                         print("Se muestra la informacion de los estudiantes reprobados")
-                        actions.ftn_failed_students(path_csv_file)
+                        actions.ftn_failed_students(new_std_list) #path_csv_file
             except IndexError as error:
                 print(f'La opción elegida no esta dentro de las disponibles. Error: {error}')
             except ValueError as e:
