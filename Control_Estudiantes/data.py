@@ -9,8 +9,8 @@ HEATHERS_FILE = ["name","section","spanish_grade","english_grade","social_grade"
 
 # Leer archivo de CSV con informacion de estudiantes, si no existe crea el archivo
 
-def read_csv_file(std_list,path_csv_file):
-    student_list= std_list
+def read_csv_file(path_csv_file):
+    student_list= []
     try:
         if not os.path.exists(path_csv_file):
             print("El archivo no existe. Se creará uno nuevo.")
@@ -111,18 +111,21 @@ def csv_export(csv_path_file, data, myheaders):
 def csv_import(csv_path_file):
     try:
         i=0
+        csv_list = []
         if(os.path.exists(csv_path_file)):
             with open(csv_path_file,'r', newline="", encoding='utf-8')as file:
-                reader= csv.DictReader(file)
-                if not any(reader):
+                reader = list(csv.DictReader(file))
+                if not (reader): #No utilizar any para evitar consumir el primer dato --if not any--
                     print("El CSV está vacío (sin datos)")
                 else:
-                    for row in reader:
-                        i+=1
-                        print(f'Linea #{i}')
-                        print(f"Estudiante: {row}")
+                    for i, row in enumerate(reader):
+                        # print(f'Linea #{i}')
+                        # print(f"Estudiante: {row}")
+                        csv_list.append(row)
+            print(f'Archivo csv leido correctamente')
         else:
             print('El archivo no ha sido exportado anteriormente')
+        return csv_list
     except Exception as e:
         print(f'Error al leer archivo {e}')
 

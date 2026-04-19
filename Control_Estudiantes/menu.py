@@ -27,7 +27,7 @@ def menu(path_csv_file):
                         break
                     case 1:
                         print(f'Ingresar datos del estudiante:\n')
-                        new_std_list = actions.new_student()
+                        new_std_list = actions.new_student(new_std_list)
                         #actions.new_student(new_std_list, path)
                     case 2:
                         print('Se muestra la informacion de todos los estudiantes: \n')
@@ -43,7 +43,7 @@ def menu(path_csv_file):
                         actions.ftn_csv_export(new_std_list,path_csv_file)
                     case 6:
                         print('Validar archivo e importar de formato CSV. Los datos del archivo son: \n')
-                        actions.ftn_csv_import(path_csv_file)
+                        new_std_list = actions.ftn_csv_import(new_std_list, path_csv_file)
                     case 7: 
                         print('Proceso para eliminar un estudiante de la lista: \n')
                         new_std_list = actions.ftn_delete_student(new_std_list) #path_csv_file
