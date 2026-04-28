@@ -150,5 +150,5 @@ def main():
         cycle(path3)
     except Exception as e:
         print(f'Error en el proceso central {e}')
-
-main()
+if __name__ == "__main__":
+    main()
