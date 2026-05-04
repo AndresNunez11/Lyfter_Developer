@@ -82,7 +82,8 @@ def validate_section_format(enter_text):
     if not enter_text[:2].isdigit():
         raise formatTypeError(enter_text)
     if not enter_text[2].isalpha():
-        raise formatTypeError(enter_text)       
+        raise formatTypeError(enter_text) 
+    return enter_text      
 
 
 # Funcion para leer los datos desde Json, utilizando modulo de data
@@ -287,6 +288,19 @@ def ftn_csv_export(student_list,path_csv_file):
 
 
 
+# Funcion para exportar los datos a CSV - Validar si existe el archivo y exportar  la lista actual
+def ftn_csv_export(student_list,path_csv_file):
+    try:
+        headers=[]
+        std_data = read_csv_file(path_csv_file) 
+        if not std_data:
+            headers = HEATHERS_FILE
+        data.csv_export(path_csv_file,student_list, headers)
+    except Exception as e:
+        print(f'Error en funcion para exportar datos a CSV. Error: {e}')
+
+
+
 # Funcion para importar los datos a CSV
 def ftn_csv_import(new_std_list, path_csv_file):
     try:
@@ -392,5 +406,114 @@ def ftn_failed_students(student_list):
     except Exception as e:
         print(f'Error al mostrar a los estudiantes reprobados. Error: {e}')
             
+# Funcion para importar los datos a CSV y validar los datos contra la lita en memoria
+def ftn_csv_import_memoria(new_std_list, path_csv_file):
+    try:
+        i=0
+        csv_list = data.csv_import(path_csv_file)  
+        # print(f'Imprime la lista desde l funcion importar {new_std_list}')
+        # print(f'La lista es {csv_list}')
+        if not csv_list:
+            print("No se agregan datos al sistema, se mantiene la lista original.")
+            for student in new_std_list:
+                print(f'Estudiante: {student} ')
+            return new_std_list
+        else: 
+            print(f'Total de estudiantes en csv {len(csv_list)}')
+            for item in csv_list:
+                i+=1
+                print(f'El estudiante importado del CSV es {i} - {item['name']}')
+                # while True:
+                try:
+                    name= no_duplicate_student(validate_complete_name(validate_empty_name(validate_name(item['name']))),new_std_list)
+                    student_name = name
+                    student_section = validate_section_format(item['section'])
+                    spanish_grade = grade_number(int(item['spanish_grade']))
+                    english_grade = grade_number(int(item['english_grade']))
+                    social_grade = grade_number(int(item['social_grade']))
+                    science_grade = grade_number(int(item['science_grade']))
+                    new_student = {
+                        "name": student_name,
+                        "section":student_section,
+                        "spanish_grade": spanish_grade,
+                        "english_grade":english_grade,
+                        "social_grade":social_grade,
+                        "science_grade":science_grade
+                        }
+                    new_std_list.append(new_student)
+                    # break
+                except nameTypeError as error:
+                    print(f'Error: {error}\nDato ingresado no es correcto, no se puede agregar. Se continua al siguiente registro.')
+                    # break
+                except emptyTypeError as error:
+                    print(f'Error: {error}\nDato ingresado no es correcto, no se puede agregar. Se continua al siguiente registro.')
+                    # break
+                except completeTypeError as error:
+                    print(f'Error: {error}\nDato ingresado no es correcto, no se puede agregar. Se continua al siguiente registro.')
+                    # break
+                except formatTypeError as error:
+                    print(f'Error: {error}\nDato ingresado no es correcto, no se puede agregar. Se continua al siguiente registro.')
+                    # break
+                except  ValueError as error:
+                    print(f'Error: {error}\nDato ingresado no es correcto, no se puede agregar. Se continua al siguiente registro.')
+                    # break    
+            print(f'Se completa proceso de importar CSV Se actualiza la lista de estudiantes.')
+            show_all_students(new_std_list)            
+            return new_std_list
+    except Exception as e:
+        print(f'Error en funcion para importar datos a CSV. Error: {e}')
+
+
+# Funcion para exportar los datos a CSV y validar la lista actual en CSV uniendo los datos
+def ftn_csv_export_memoria(student_list,path_csv_file):
+    try:
+        # path_file_csv = 'Control_Estudiantes/Estudiantes.csv' 
+        headers=[]
+        i=0
+        std_data = read_csv_file(path_csv_file) 
+        # std_data = student_list
+        if not std_data:
+            headers = HEATHERS_FILE
+        else:
+            for item  in std_data[0].keys():
+                headers.append(item)
+            for item in std_data:
+                i+=1
+                print(f'El estudiante en CSV es {i} - {item['name']}')
+                while True:
+                    try:
+                        student_name = no_duplicate_student(validate_complete_name(validate_empty_name(validate_name(item['name']))),student_list)
+                        student_section = validate_section_format(item['section'])
+                        spanish_grade = grade_number(item['spanish_grade'])
+                        english_grade = grade_number(item['english_grade'])
+                        social_grade = grade_number(item['social_grade'])
+                        science_grade = grade_number(item['science_grade'])
+                        new_student = {
+                            "name": student_name,
+                            "section":student_section,
+                            "spanish_grade": spanish_grade,
+                            "english_grade":english_grade,
+                            "social_grade":social_grade,
+                            "science_grade":science_grade
+                            }
+                        student_list.append(new_student)
+                    except nameTypeError as error:
+                        print(f'Error: {error}\nDato ingresado no es correcto, no se puede agregar. Se continua al siguiente registro.')
+                        break
+                    except emptyTypeError as error:
+                        print(f'Error: {error}\nDato ingresado no es correcto, no se puede agregar. Se continua al siguiente registro.')
+                        break
+                    except completeTypeError as error:
+                        print(f'Error: {error}\nDato ingresado no es correcto, no se puede agregar. Se continua al siguiente registro.')
+                        break
+                    except formatTypeError as error:
+                        print(f'Error: {error}\nDato ingresado no es correcto, no se puede agregar. Se continua al siguiente registro.')
+                        break
+                    except  ValueError as error:
+                        print(f'Error: {error}\nDato ingresado no es correcto, no se puede agregar. Se continua al siguiente registro.')
+                        break            
+        data.csv_export(path_csv_file,student_list, headers)
+    except Exception as e:
+        print(f'Error en funcion para exportar datos a CSV. Error: {e}')
 
     

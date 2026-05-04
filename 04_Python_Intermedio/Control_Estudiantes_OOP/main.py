@@ -2,8 +2,8 @@ import menu
 
 # Variables Globales
 #Utilizar la variable global en la mayuscula cuando es inmutable -- 
-PATH_JSON_FILE = 'Control_Estudiantes/Estudiantes.json' 
-PATH_CSV_FILE = 'Control_Estudiantes/Estudiantes.csv' 
+PATH_JSON_FILE = '04_Python_Intermedio/Control_Estudiantes_OOP/Estudiantes.json' 
+PATH_CSV_FILE = '04_Python_Intermedio/Control_Estudiantes_OOP/Estudiantes.csv' 
 
 #Funcion principal del sistema 
 def main(PATH_CSV_FILE):
@@ -15,4 +15,6 @@ def main(PATH_CSV_FILE):
 #Inicio del Sistema
 if __name__ == "__main__":
     main(PATH_CSV_FILE)
+    
+
 

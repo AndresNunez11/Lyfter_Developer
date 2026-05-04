@@ -98,10 +98,20 @@ def save_new_student(student_list, path_csv_file):
 # Exportar los datos a formato csv
 def csv_export(csv_path_file, data, myheaders):
     try:
+        data_dict = [student.to_dict() for student in data] # Los datos de la lista que son objetos los transforma en un diccionario
+        '''# Otra forma es manual
+        data_dict = []
+            for student in data:
+                data_dict.append({
+                    "name": student.name,
+                    "section": student.section,
+                    "average": student.average
+                })
+        '''
         with open(csv_path_file, 'w', newline="", encoding='utf-8')as file:
             writer= csv.DictWriter(file, myheaders)
             writer.writeheader()
-            writer.writerows(data)
+            writer.writerows(data_dict)
             print('Archivo exportado a CSV')
     except Exception as e:
         print(f'Error al exportar informacion a formato CSV. Error : {e}')
