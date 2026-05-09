@@ -5,10 +5,15 @@ import personclass
 #Funcion principal del sistema 
 def main():
     try:
-        # my_circle = circleclass.Circle(3)
-        # my_circle.circle_area()
-        # my_circle2 = circleclass.Circle(9)
-        # my_circle2.circle_area()
+    #     my_circle = circleclass.Circle(3)
+    #     my_circle.get_area()
+    #     print(f'El area del el circulo es {my_circle.area}')
+    #     my_circle2 = circleclass.Circle(9)
+    #     my_circle2.get_area()
+    #     print(f'El area del el circulo es {my_circle2.area}')
+        
+        
+        
         person1 = personclass.Person()
         person2 = personclass.Person()
         person3 = personclass.Person()
