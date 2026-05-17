@@ -1,0 +1,7 @@
+[
+{"description":"Salir"},
+{"description":"Cree una clase de BankAccount que: \n Tenga un atributo de balance. \n Tenga un método para ingresar dinero. \n Tengo un método para retirar dinero."},
+{"description": "Cree otra clase que herede de esta llamada SavingsAccount que: \n Tenga un atributo de min_balance que se pueda asignar al crearla. \n Arroje un error si al intentar retirar dinero, el retiro haría que el balance quede debajo del min_balance. \n Es decir que sí se pueden hacer retiros siempre y cuando el balance quede arriba del min_balance."},
+{"description": "Cree una clase abstracta de Shape que: \n Tenga los métodos abstractos de calculate_perimeter y calculate_area. \n Ahora cree las siguientes clases que hereden de Shape e implementen esos métodos: Circle, Square y Rectangle. \n Cada una de estas necesita los atributos respectivos para poder calcular el área y el perímetro."},
+{"description":"Investigue qué usos se le pueden dar a la herencia multiple y cree un ejemplo."}
+]
