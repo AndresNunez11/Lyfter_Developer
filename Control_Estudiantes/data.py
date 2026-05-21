@@ -128,4 +128,5 @@ def csv_import(csv_path_file):
         return csv_list
     except Exception as e:
         print(f'Error al leer archivo {e}')
+        
 

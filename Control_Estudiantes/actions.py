@@ -234,54 +234,13 @@ def total_average(student_list):
     except Exception as e:
         print(f'Error al obtener el  promedio total de notas de todos los estudiantes. Error: {e} ')
 
-# Funcion para exportar los datos a CSV
+# Funcion para exportar los datos a CSV - Validar si existe el archivo y exportar  la lista actual
 def ftn_csv_export(student_list,path_csv_file):
     try:
-        # path_file_csv = 'Control_Estudiantes/Estudiantes.csv' 
         headers=[]
-        i=0
         std_data = read_csv_file(path_csv_file) 
-        # std_data = student_list
         if not std_data:
             headers = HEATHERS_FILE
-        else:
-            for item  in std_data[0].keys():
-                headers.append(item)
-            for item in std_data:
-                i+=1
-                print(f'El estudiante en CSV es {i} - {item['name']}')
-                while True:
-                    try:
-                        student_name = no_duplicate_student(validate_complete_name(validate_empty_name(validate_name(item['name']))),student_list)
-                        student_section = validate_section_format(item['section'])
-                        spanish_grade = grade_number(item['spanish_grade'])
-                        english_grade = grade_number(item['english_grade'])
-                        social_grade = grade_number(item['social_grade'])
-                        science_grade = grade_number(item['science_grade'])
-                        new_student = {
-                            "name": student_name,
-                            "section":student_section,
-                            "spanish_grade": spanish_grade,
-                            "english_grade":english_grade,
-                            "social_grade":social_grade,
-                            "science_grade":science_grade
-                            }
-                        student_list.append(new_student)
-                    except nameTypeError as error:
-                        print(f'Error: {error}\nDato ingresado no es correcto, no se puede agregar. Se continua al siguiente registro.')
-                        break
-                    except emptyTypeError as error:
-                        print(f'Error: {error}\nDato ingresado no es correcto, no se puede agregar. Se continua al siguiente registro.')
-                        break
-                    except completeTypeError as error:
-                        print(f'Error: {error}\nDato ingresado no es correcto, no se puede agregar. Se continua al siguiente registro.')
-                        break
-                    except formatTypeError as error:
-                        print(f'Error: {error}\nDato ingresado no es correcto, no se puede agregar. Se continua al siguiente registro.')
-                        break
-                    except  ValueError as error:
-                        print(f'Error: {error}\nDato ingresado no es correcto, no se puede agregar. Se continua al siguiente registro.')
-                        break            
         data.csv_export(path_csv_file,student_list, headers)
     except Exception as e:
         print(f'Error en funcion para exportar datos a CSV. Error: {e}')

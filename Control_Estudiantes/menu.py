@@ -58,3 +58,4 @@ def menu(path_csv_file):
                 print(f'Error al desplegar el menu {e}')
     except Exception as e:
         print(f'Error al iniciar el menu, no lee archivo json. Error: {e}')
+        
