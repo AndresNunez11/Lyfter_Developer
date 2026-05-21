@@ -1,0 +1,122 @@
+[
+    {
+        "name": "Carlos Ramirez Vega",
+        "section": "11-1",
+        "spanish_grade": 78,
+        "english_grade": 85,
+        "social_grade": 92,
+        "science_grade": 74
+    },
+    {
+        "name": "Maria Fernanda Soto",
+        "section": "11-2",
+        "spanish_grade": 88,
+        "english_grade": 90,
+        "social_grade": 79,
+        "science_grade": 84
+    },
+    {
+        "name": "Luis Alberto Mora",
+        "section": "11-3",
+        "spanish_grade": 65,
+        "english_grade": 72,
+        "social_grade": 81,
+        "science_grade": 77
+    },
+    {
+        "name": "Daniela Vargas Cruz",
+        "section": "11-4",
+        "spanish_grade": 93,
+        "english_grade": 87,
+        "social_grade": 91,
+        "science_grade": 95
+    },
+    {
+        "name": "Jorge Castillo Rojas",
+        "section": "11-1",
+        "spanish_grade": 70,
+        "english_grade": 68,
+        "social_grade": 75,
+        "science_grade": 80
+    },
+    {
+        "name": "Paula Jimenez Herrera",
+        "section": "11-2",
+        "spanish_grade": 84,
+        "english_grade": 88,
+        "social_grade": 90,
+        "science_grade": 82
+    },
+    {
+        "name": "Fernando Araya Solis",
+        "section": "11-3",
+        "spanish_grade": 59,
+        "english_grade": 73,
+        "social_grade": 69,
+        "science_grade": 64
+    },
+    {
+        "name": "Laura Chaves Navarro",
+        "section": "11-4",
+        "spanish_grade": 91,
+        "english_grade": 94,
+        "social_grade": 88,
+        "science_grade": 90
+    },
+    {
+        "name": "Ricardo Pacheco Mora",
+        "section": "11-1",
+        "spanish_grade": 76,
+        "english_grade": 81,
+        "social_grade": 83,
+        "science_grade": 79
+    },
+    {
+        "name": "Gabriela Rojas Salas",
+        "section": "11-2",
+        "spanish_grade": 87,
+        "english_grade": 92,
+        "social_grade": 85,
+        "science_grade": 89
+    },
+    {
+        "name": "Esteban Delgado Ruiz",
+        "section": "11-3",
+        "spanish_grade": 63,
+        "english_grade": 70,
+        "social_grade": 68,
+        "science_grade": 72
+    },
+    {
+        "name": "Andrea Quesada Molina",
+        "section": "11-4",
+        "spanish_grade": 95,
+        "english_grade": 97,
+        "social_grade": 93,
+        "science_grade": 96
+    },
+    {
+        "name": "Kevin Solano Vargas",
+        "section": "11-1",
+        "spanish_grade": 71,
+        "english_grade": 75,
+        "social_grade": 74,
+        "science_grade": 78
+    },
+    {
+        "name": "Natalia Cordero Brenes",
+        "section": "11-2",
+        "spanish_grade": 89,
+        "english_grade": 91,
+        "social_grade": 86,
+        "science_grade": 90
+    },
+    {
+        "name": "Oscar Mendez Calderon",
+        "section": "11-3",
+        "spanish_grade": 66,
+        "english_grade": 69,
+        "social_grade": 73,
+        "science_grade": 67
+    }
+]
