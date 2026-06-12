@@ -39,8 +39,6 @@ def main():
                 print(e)
                 input("Presione [Enter] para continuar...")
                 print(f'El valor ingresado no es correcto. Se reinicia la aplicación. {e}')
-            except Exception as e:
-                print(f'Error en el menu principal. Error: {e}')
     except Exception as e:
         print(f'Existe un error al iniciar la aplicacion {e}')
 

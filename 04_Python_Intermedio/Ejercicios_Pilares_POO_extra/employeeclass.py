@@ -12,6 +12,10 @@ class Employee:
     
     @property
     def salary(self):
-        return self.__salary
+        return self.__salary.salary # devuelve el valor numérico contenido dentro del objeto Salary. sin ese punto salary devuelve el objeto, puedo llamarlo porque salary es una propiedad en clase salary
+    
+    def promote(self, percentaje):
+        self.__salary.promote(percentaje)
+
     
 

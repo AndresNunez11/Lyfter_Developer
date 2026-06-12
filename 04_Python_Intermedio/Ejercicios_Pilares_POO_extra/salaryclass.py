@@ -15,6 +15,8 @@ class Salary:
 
     def promote(self, percentage):
         self.__salary = float(self.__salary)*(1+float(percentage)/100)
+        return self.__salary
+
     
     
     

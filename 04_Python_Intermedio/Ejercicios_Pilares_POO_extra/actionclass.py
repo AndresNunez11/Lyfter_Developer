@@ -22,9 +22,10 @@ class Menu_Actions(Datos):
     
     def employee_exercise( name, amount):
         employee = Employee(name, amount)
-        print(f'Nombre: {employee.name}\n Salario: {employee.salary.salary}')
-        employee.salary.promote(input(f'Ingrese el porcentaje de aumento para el empleado \n'))
-        print(f'Nombre: {employee.name}\n Nuevo Salario: {employee.salary.salary}')
+        print(f'Nombre: {employee.name}\nSalario: {employee.salary}')
+        percentaje =  int(input(f'Digite el porcentaje de aumento\n'))
+        employee.promote(percentaje)
+        print(f'Nombre: {employee.name}\nNuevo Salario: {employee.salary}')
     
     def user_exercise():
         user1 = AdminUser()
@@ -41,8 +42,10 @@ class Menu_Actions(Datos):
     def vehicle_exercise():
         vehicle1 = Car('Toyota','2016','4','Yaris')
         vehicle2 = Motorcycle('Yamaha', '2015','Yamaha MT-03','2','321 cc, bicilíndrico')
-        vehicle1.get_info()
-        vehicle2.get_info()
+        print(vehicle1.get_info())
+        print(vehicle2.get_info())
+
+
 
         
 

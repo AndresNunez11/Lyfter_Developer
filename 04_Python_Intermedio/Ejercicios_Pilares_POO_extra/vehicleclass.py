@@ -9,4 +9,4 @@ class Vehicle(ABC):
     
     @abstractmethod
     def get_info(self):
-        print(f'Datos del Vehiculo: \nMarca: {self._brand} \nAño: {self._year} ')
+        return(f'Datos del Vehiculo: \nMarca: {self._brand} \nAño: {self._year} ')

@@ -9,4 +9,4 @@ class Motorcycle(Vehicle):
         self._motor = motor
     
     def get_info(self):
-        print(f' Detalle de la motocicleta: \nMarca: {self._brand} \nModelo: {self._model}\nMotoe: {self._motor}')
+        return(f' Detalle de la motocicleta: \nMarca: {self._brand} \nModelo: {self._model}\nMotoe: {self._motor}')
