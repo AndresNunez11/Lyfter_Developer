@@ -1,0 +1,6 @@
+[
+{"description":"Salir"},
+{"description":"Cree una clase Employee con los siguientes requisitos:\nAtributos privados: _name, _salary\nUse @property y @<atributo>.setter para:\nMostrar el nombre y el salario\nValidar que el salario nunca sea negativo\nCree un método promote que aumente el salario un porcentaje definido"},
+{"description": "Cree una clase abstracta User con los siguientes métodos abstractos:\nget_role()\nhas_permission(permission)\nLuego cree dos clases que hereden de ella:\nAdminUser\nRegularUser\nCada una debe implementar los métodos\nPor ejemplo:\nAdminUser siempre tiene permisos\nRegularUser solo tiene permisos limitados (read, por ejemplo)."},
+{"description": "Cree una clase base Vehicle con los atributos:\n_brand\n_year\nAgregue un método get_info() que devuelva una descripción del vehículo.\nLuego cree dos clases hijas:\nCar\nMotorcycle\nCada una debe agregar su propio atributo (por ejemplo, doors o type) y sobrescribir el método get_info() para incluir esta información adicional."}
+]
