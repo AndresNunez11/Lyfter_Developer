@@ -27,7 +27,7 @@ class User:
             if user.age >= 18:
                 print(f'Su edad es {user.age}, Usuario {user._name} mayor de edad')
             else:
-                print(f'Su edad es {user.age}, Usuraio {user._name} menor de edad')
+                raise ValueError("Usuario menor de edad, no puede ingresar al sistema.")
             return func(self,user)
         return wrapper
 

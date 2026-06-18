@@ -9,7 +9,7 @@ class Numbers:
                     print(f'{item} es un numero')
                 except  ValueError as error:
                     print(f'Error: {error}\nDato ingresado no es un número. Intente nuevamente.')
-                    return False
+                    raise ValueError("El dato ingresado debe de ser un numero")
             result = func(*args)
             return result
         return wrapper

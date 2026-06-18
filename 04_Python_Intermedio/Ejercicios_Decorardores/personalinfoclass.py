@@ -14,7 +14,7 @@ class Personalinfo:
             for key, value in kwargs.items():
                 print(f"{key}: {value}")
             result = func(self, name, lastname, **kwargs)
-            # print(f'Retorno: {result}')
+            print(f'Retorno: {result}')
             return result
         return wrapper
 

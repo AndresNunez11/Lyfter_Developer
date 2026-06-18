@@ -22,7 +22,8 @@ def main():
                         input('Presione [Enter] para continuar \n')
                     case 2:
                         print(f'{menu.list_exercise[2]}') 
-                        menu.numbers('1','2','3','4','5','5.5','1000','-200','98.25','No es un numero')                       
+                        result = menu.numbers('1','2','3','4','5','5.5','1000','-200','98.25','No es un numero')                       
+                        print(result)
                         input('Presione [Enter] para continuar')
                     case 3: 
                         print(f'{menu.list_exercise[3]}')   

@@ -32,8 +32,9 @@ class Menu_Actions(Datos):
 
     @Numbers.validate_numbers
     def numbers(*args):
-        while  True:
-            pass
+        return(f'Fin de la validaciion')
+        # while  True:
+        #     pass
         
     def new_user(self, name, birthday):
         return User(name, birthday)
