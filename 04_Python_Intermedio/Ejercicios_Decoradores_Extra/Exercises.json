@@ -1,0 +1,6 @@
+[
+{"description":"Salir"},
+{"description":"Cree una función que imprima “Hola, [nombre]” dos veces:\n Cree un decorador @repeat_twice que haga que la función decorada se ejecute dos veces seguidas, con los mismos argumentos \n Ejemplo: \n Salida:\n Hola, Jeanca \n Hola, Jeanca"},
+{"description": "Cree un decorador @requires_login que: \nVerifique si la variable global user_logged_in es True\nSi no lo es, debe lanzar una excepción Usuario no autenticado \nSi lo es, la función decorada se ejecuta normalmente\nEjemplo:\nEntrada:\nuser_logged_in =False @requires_login \ndef view_profile (): \n print(Mostrando perfil del usuario)"},
+{"description": "Cree una función que se llame multiply, la cual obtiene dos valores y los multiplica entre si A esta función se le debe combinar dos decoradores:\n@log_call: imprime el nombre de la función, los argumentos, fecha actual y el retorno @validate_numbers: revisa que todos los argumentos sean numéricos \nEjemplo:\n Entrada:\n multiply (3,4)\n Salida:\n func:multiply - args: 3, 4 - [2025-07-17 14:00:00.000000] - Resultado: 12 \n Resultado 12"}
+]
