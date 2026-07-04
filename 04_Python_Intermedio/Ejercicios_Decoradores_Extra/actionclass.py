@@ -32,8 +32,8 @@ class Menu_Actions(Datos):
     @Multiply.log_call
     @Multiply.validate_numbers
     def call_multiply(self, number1, number2):
-        multiply = Multiply(number1, number2)
-        return multiply
+        obj_multiply = Multiply(float(number1), float(number2))
+        return obj_multiply.multiply
     
 
 
