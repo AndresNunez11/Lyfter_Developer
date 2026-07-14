@@ -26,6 +26,7 @@ class Menu_Actions(Datos):
     def create_user_info(self, name,lastname,**kwargs):
         print(f'La informacion se esta agregando a la base de datos...')
         print(f'La informacion de: {name} {lastname}, fue agregada correctamente')
+        return name
         # print(f'Informacion del usuario agregada')
         
 
@@ -42,6 +43,8 @@ class Menu_Actions(Datos):
     @User.major_age        
     def show_user(self,user):
         pass
+
+    
     
 
         
