@@ -1,0 +1,8 @@
+[
+{"description":"Salir"},
+{"description":"Cree una estructura de objetos que asemeje un  Linked Lists"},
+{"description":"Cree una estructura de objetos que asemeje un Queue (FIFO)"},
+{"description":"Cree una estructura de objetos que asemeje un Stack (LIFO)"},
+{"description": "Cree una estructura de objetos que asemeje un Double Ended Queue"},
+{"description": "Cree una estructura de objetos que asemeje un Binary Tree"}
+]
