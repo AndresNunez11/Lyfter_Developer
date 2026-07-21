@@ -69,9 +69,11 @@ class Menu_Actions(Datos):
 # Creando una cola Double ended Queue
     def show_DobleEndedQueue(self):
         firts_node = Node('Soy el primer nodo')
+        newDouEnQue = DoubleEndedQueue(firts_node)
+        newDouEnQue.print_structre()
+        print(f'\nSe relaciona primer Nodo y segundo Nodo')
         second_node = Node('Soy el segundo nodo')
         firts_node.next = second_node
-        newDouEnQue = DoubleEndedQueue(firts_node)
         newDouEnQue.print_structre()
         print(f'\n---- Push Righ ---')
         first_righ_node = Node('Primer Nodo a la derecha')

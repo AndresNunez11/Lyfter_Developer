@@ -10,9 +10,13 @@ class DoubleEndedQueue:
     
     def print_structre(self):
         currentNode = self.head
-        while self.head.next is None:
-            self.tail = self.head
-            currentNode = currentNode.next
+        while currentNode is not None:
+            if type(currentNode.next) == type(None):
+                self.tail = currentNode
+                currentNode =None
+            else:                
+                currentNode = currentNode.next
+        currentNode = self.head
         while currentNode is not None:
             print(currentNode.data)
             currentNode = currentNode.next
@@ -42,9 +46,10 @@ class DoubleEndedQueue:
     def pop_left(self):
         currentNode = self.head
         # print(self.tail.data)
-        # print('Debe eliminar el nodo d ela izquierda')
+        # print('Debe eliminar el nodo de la izquierda')
         while currentNode.next is not None:
             currentNode = currentNode.next
             if currentNode.next == self.tail:
                 currentNode.next = None
+                self.tail = currentNode
         
