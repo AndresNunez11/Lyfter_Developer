@@ -36,24 +36,28 @@ class Menu_Actions(Datos):
         print(f' Se elimina el nodo {newQueue.dequeue().data}')
         newQueue.print_all()
 
-# Ejercicio#1 Estructura LinkedList
+# Ejercicio#2 Estructura LinkedList
     def show_linkedlist(self):
         first_node = Node('10')
         newLinkedlist = Linkedlist(first_node)
         newLinkedlist.print_all()
         second_node = Node('20')
         third_node = Node('30')
+        fourth_node = Node('50')
         print('\n ----------------Agregar al frente------------')
         newLinkedlist.insert_front(second_node)
+        newLinkedlist.insert_front(fourth_node)
         newLinkedlist.print_all()
         print('\n ----------------Agregar al atras------------')
         newLinkedlist.insert_back(third_node)
         newLinkedlist.print_all()
-        print('\n ----------------Metodo Eliminar al frente------------')
-        newLinkedlist.delet_data()
+        print('\n ----------------Metodo Eliminar Nodo segun el dato------------')
+        newLinkedlist.delet_data('50')
+        newLinkedlist.print_all()
+        newLinkedlist.delet_data('20')
         newLinkedlist.print_all()
 
-# Ejercicio#1 Estructura LinkedList
+# Ejercicio#3 Estructura DobleList
     def show_doublelist(self):
         firts_node = Node('A')
         newdoublelist = DoubleList(firts_node)
@@ -82,6 +86,7 @@ class Menu_Actions(Datos):
         newdoublelist.delete_data('Y')
         newdoublelist.print_forward()
         print('\n ----------------Metodo Delete -- Print Backward------------')
+        newdoublelist.delete_data('A')
         newdoublelist.print_backward()
         
 

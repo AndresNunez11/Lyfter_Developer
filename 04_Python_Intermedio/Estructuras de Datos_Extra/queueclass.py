@@ -23,10 +23,13 @@ class Queue:
 
     def print_all(self):
         currentNode = self.head
+        aux = ''
         while currentNode is not None:
-            print(f'{currentNode.data}')
-            if(currentNode.next is not None):
-                print(f'->')
+            str = currentNode.data 
+            aux= aux+str
+            if currentNode.next is not None:
+                aux= aux+'-> '
             else:
-                print(f'-> No hay siguiente')
+                aux =aux 
             currentNode = currentNode.next
+        print(f'{aux}')

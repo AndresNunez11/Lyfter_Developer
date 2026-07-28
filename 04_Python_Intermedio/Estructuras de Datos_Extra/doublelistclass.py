@@ -37,36 +37,48 @@ class DoubleList:
     
     def delete_data(self,str):
         currentNode = self.head
-        while currentNode is not None:
-            if currentNode.data == str:
-                auxNode = currentNode #--B
-                beforeNode = auxNode.before #--A
-                # nextnode = auxNode.next #--C
-                currentNode = currentNode.next #--C
-                beforeNode.next = currentNode #--C
-                currentNode.before = beforeNode #--A
-                # return auxNode
-            else:
-                currentNode = currentNode.next
+        if(currentNode.data == str):
+            self.head = currentNode.next
+        else:
+            while currentNode is not None:
+                if currentNode.data == str:
+                    auxNode = currentNode #--B
+                    beforeNode = auxNode.before #--A
+                    # nextnode = auxNode.next #--C
+                    currentNode = currentNode.next #--C
+                    beforeNode.next = currentNode #--C
+                    currentNode.before = beforeNode #--A
+                    # return auxNode
+                else:
+                    currentNode = currentNode.next
         # return Node(f'Dato {str} no esta en la lista') # deberia de manejarse como un error 
         
 
     def print_forward(self):
         currentNode = self.head
+        aux = ''
         while currentNode is not None:
-            print(f'{currentNode.data}')
-            if currentNode.next is None:
-                print('')
+            str = currentNode.data 
+            aux= aux+str
+            if currentNode.next is not None:
+                aux= aux+'-> '
             else:
-                print('->')
+                aux =aux 
             currentNode = currentNode.next
+        print(f'{aux}')
+
+
     
     def print_backward(self):
         currentNode = self.tail
+        aux = ''
         while currentNode is not None:
-            print(f'{currentNode.data}')
-            if currentNode.before is None:
-                print('')
+            str = currentNode.data 
+            aux= aux+str
+            if currentNode.before is not None:
+                aux= aux+'-> '
             else:
-                print('->')
+                aux =aux 
             currentNode = currentNode.before
+        print(f'{aux}')
+        
