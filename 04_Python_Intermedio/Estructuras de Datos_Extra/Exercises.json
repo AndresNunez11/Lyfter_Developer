@@ -1,0 +1,6 @@
+[
+{"description":"Salir"},
+{"description":"Cree una estructura que represente una cola básica (Queue) con objetos enlazados \n Restricción: no usar list, dict, tuple, collections Métodos requeridos:\n enqueue(data): agrega un nodo al final\n dequeue(): elimina y retorna el nodo del inicio\n print_all(): imprime todos los elementos de la cola en orden \n"},
+{"description":"Cree una clase LinkedList con los métodos:\n insert_front(data): Inserta al inicio\n insert_back(data): Inserta al final\n delete(data): Elimina el primer nodo con el valor dato \n print_all(): Imprime todos los valores\n"},
+{"description": "Lista doblemente enlazada \n  Requisitos: Cada nodo debe tener referencia al siguiente y al anterior Métodos:\n append(data): Agrega al final\n prepend(data): Agrega al inicio\n delete(data): Elimina el primer nodo con ese valor \n print_forward() y print_backward(): Imprime en ambas direcciones \n"}
+]
