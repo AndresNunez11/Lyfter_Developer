@@ -41,8 +41,8 @@ class BubbleSort():
                 currentNode = currentNode.next
             # print(f'Ordenando los numeros ....')
             swapped = True
-            i=1   
-            c=1     
+            i=0   
+            c=0     
             # print(currentNode.data)
             # print(currentNode.next.data)
             while swapped:

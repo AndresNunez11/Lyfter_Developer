@@ -36,6 +36,10 @@ def main():
                         print(f'{menu.list_exercise[5]}')
                         menu.show_BinaryTree()
                         input('Presione [Enter] para continuar')
+                    case 6: 
+                        print(f'{menu.list_exercise[6]}')
+                        menu.sortexercise()
+                        input('Presione [Enter] para continuar')
             except IndexError as e:
                 print(f'La opción elegida no esta dentro de las disponibles. Error: {e}')
             except ValueError as e:

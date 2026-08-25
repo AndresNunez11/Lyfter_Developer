@@ -6,6 +6,7 @@ from stackclass import Stack
 from doubleendedqueueclass import DoubleEndedQueue
 from binarytreeclas import BinaryTree
 from bubblesortclass import BubbleSort
+from sortexerciseclass import bubble_sort, bubble_sort_steps, validated_bubble_sort
 
 
 # import inidataclass
@@ -153,6 +154,21 @@ class Menu_Actions(Datos):
         newBinaryTree.print_structure()
         linked_bubblesort = BubbleSort(newBinaryTree.binary_tree_list())
         linked_bubblesort.bubble_sort_linkedlist()
+
+    def sortexercise(self):
+        numberlist1 = [5,3,8,1,2]
+        print(f'Lista original: \n{numberlist1}')
+        print(f'Lista Ordenada:\n{bubble_sort(numberlist1)}')
+        result = bubble_sort_steps(numberlist1)
+        print("Lista ordenada:", result[0])
+        print("Iteraciones:", result[1])
+        print("Comparaciones:", result[2])
+        # numberlist2 = [5,'Hola',2]
+        # print(f'{validated_bubble_sort(numberlist2)}')
+        numberlist3 = []
+        print(f'{validated_bubble_sort(numberlist3)}')
+
+
 
 
 
