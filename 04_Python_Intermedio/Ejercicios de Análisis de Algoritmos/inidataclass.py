@@ -21,7 +21,7 @@ class Datos(Exercise, List_Exercises):
         try:
             with open(self.path, "r", encoding="utf-8" ) as file:
                 data = json.load(file)
-                if (data, list):
+                if isinstance(data, list):
                     for item in data:
                         # print(item)
                         self.description = item['description']
