@@ -10,7 +10,7 @@ def test_divide_number_return_result():
     # Assert
     assert Result == 5.0
 
-def test_divide_number_return_result():
+def test_divide_by_zero_number_return_result():
     # Arrange
     number1 = 10
     number2 = 0
@@ -18,7 +18,7 @@ def test_divide_number_return_result():
     with pytest.raises(ValueError):
         divide(number1, number2)
     
-def test_divide_number_return_result():
+def test_divide_string_number_return_():
     # Arrange
     number1 = "A"
     number2 = 5

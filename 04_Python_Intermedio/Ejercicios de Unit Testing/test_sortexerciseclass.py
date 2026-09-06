@@ -48,3 +48,10 @@ def test_validate_bubble_sort_data_error_list_return_raise_error():
     #Act
     with pytest.raises(ValueError):
         validated_bubble_sort(input_list)
+
+def test_validate_bubble_sort_data_error_diferent_input_return_raise_error():
+    #Arreange
+    input_list= 'A'
+    #Act
+    with pytest.raises(TypeError):
+        validated_bubble_sort(input_list)
