@@ -45,7 +45,7 @@ def test_average_negative_numbers_return():
     #Assert
     assert Result == -5.5
 
-def test_averge_zero_numbers_return():
+def test_average_zero_numbers_return():
     #Arrange
     number1=0
     number2=1
@@ -62,7 +62,7 @@ def test_change_to_str_positive_numbers_return():
     #Assert
     assert Result == "5"
 
-def test_change_to_str_numbers_return():
+def test_change_to_str_negative_numbers_return():
     #Arrange
     number1=-5
     #Act
@@ -70,7 +70,7 @@ def test_change_to_str_numbers_return():
     #Assert
     assert Result == "-5"
 
-def test_change_to_str_numbers_return():
+def test_change_to_str_zero_numbers_return():
     #Arrange
     number1=0
     #Act
