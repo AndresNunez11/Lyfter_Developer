@@ -1,0 +1,6 @@
+[
+{"description":"Salir"},
+{"description":"Los siguientes dos algoritmos hacen lo mismo: calcular la suma de los primeros n números naturales\nPreguntas:\n¿Cuál es la complejidad de cada versión?\n¿Qué versión usaría si number = 1 000 000 000? ¿Por qué?"},
+{"description":"Considere los siguientes dos algoritmos:\nPreguntas:\n¿Cuál es la complejidad de cada algoritmo?\n¿En qué condiciones conviene usar cada uno?\n¿Qué pasa si la lista no está ordenada?"},
+{"description":"Analice la siguiente función:\nPreguntas:\n¿Cuál es la complejidad temporal?\n¿Cuanto dura si hay 1 millón de claves?"}
+]

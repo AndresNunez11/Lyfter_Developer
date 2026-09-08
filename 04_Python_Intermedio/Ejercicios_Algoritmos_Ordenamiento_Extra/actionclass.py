@@ -155,6 +155,9 @@ class Menu_Actions(Datos):
         linked_bubblesort = BubbleSort(newBinaryTree.binary_tree_list())
         linked_bubblesort.bubble_sort_linkedlist()
 
+
+    
+    # Bubble sort de una lista 
     def sortexercise(self):
         numberlist1 = [5,3,8,1,2]
         print(f'Lista original: \n{numberlist1}')
